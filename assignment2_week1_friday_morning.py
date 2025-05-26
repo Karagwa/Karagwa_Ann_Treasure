@@ -1,27 +1,25 @@
-import sys
 
-print("Script starting...", flush=True)  # This will force immediate output
 
 while True:
     try:
-        print("About to ask for first number", flush=True)
+        
         x = int(input("Enter a number: "))
-        print("About to ask for second number", flush=True)
+        
         y = int(input("Enter another number: "))
         if y == 0:
-            print("You cannot divide by zero", flush=True)
+            print("You cannot divide by zero")
             continue
-        print("Let's divide the two numbers", flush=True)
-        print(x / y, flush=True)
+        print("Let's divide the two numbers")
+        print(x / y)
         break
     except ZeroDivisionError:
-        print("You cannot divide by zero", flush=True)
+        print("You cannot divide by zero")
     except ValueError:
-        print("Please enter a valid number", flush=True)
+        print("Please enter a valid number")
     except Exception as e:
-        print(f"An unexpected error occurred: {e}", flush=True)
+        print(f"An unexpected error occurred: {e}")
     finally:
-        print("Let's do some division.", flush=True)
+        print("Let's do some division.")
 
-print("Script completed.", flush=True)
+
 
