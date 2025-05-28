@@ -8,6 +8,11 @@ class Person:
 
     def display_info(self):
         print(f"Name: {self.name}, Age: {self.age}")
+        
+    def register_details(self, name, age):
+        self.name = name
+        self.age = age
+        print(f"Details entered: Name - {self.name}, Age - {self.age}")
 
 class Student(Person):
     def __init__(self, student_id, **kwargs):
@@ -16,6 +21,12 @@ class Student(Person):
 
     def display_info(self):
         print(f"Student Name: {self.name}, Age: {self.age}, ID: {self.student_id}")
+        
+    # Method overriding    
+    def register_details(self, name, age, student_id):
+        super().register_details(name, age)
+        self.student_id = student_id
+        print(f"Student ID: {self.student_id} has been registered.")
 
 class Lecturer(Person):
     def __init__(self, employee_id, **kwargs):
@@ -25,6 +36,12 @@ class Lecturer(Person):
 
     def display_info(self):
         print(f"Lecturer Name: {self.name}, Age: {self.age}, Employee ID: {self.employee_id}")
+    
+    # Method overiding
+    def register_details(self, name, age, employee_id):
+        super().register_details(name, age)
+        self.employee_id = employee_id
+        print(f"Employee ID: {self.employee_id} has been registered.")
 
 # Method overloading using multipledispatch
 @staticmethod
